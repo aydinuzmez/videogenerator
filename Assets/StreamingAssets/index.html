@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unity Veri Gönderme</title>
+    <script>
+        function sendData() {
+            const inputText = document.getElementById("textInput").value;
+
+            fetch('http://localhost:8080/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ message: inputText })
+            })
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("response").innerHTML = "Gönderilen veri: " + data;
+                })
+                .catch(error => console.error('Hata:', error));
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Unity'ye Veri Gönder</h1>
+    <input type="text" id="textInput" placeholder="Mesajınızı yazın..." />
+    <button onclick="sendData()">Gönder</button>
+    <div id="response"></div>
+</body>
+
+</html>
