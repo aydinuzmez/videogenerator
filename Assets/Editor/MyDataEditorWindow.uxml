@@ -1,0 +1,7 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:VisualElement style="padding: 10px;">
+        <ui:Label text="My Data Editor" class="title" />
+        <ui:TextField name="textField" label="Text" />
+        <ui:IntegerField name="numberField" label="Number" />
+    </ui:VisualElement>
+</ui:UXML>
